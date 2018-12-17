@@ -1,3 +1,3 @@
 # palindrome
 
-outputfile.txt will give the number of palindromes.
+outputfile.txt will give the Total count of palindrome words.
