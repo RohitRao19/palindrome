@@ -24,7 +24,8 @@ class WebDriverFactory():
             driver = webdriver.Firefox()
         elif self.browser == "chrome":
             # Set chrome driver
-            driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=options)            
+            driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=options)
+            #driver = webdriver.Chrome('C:\\pythonProject\\drivers\\chromedriver', chrome_options=options)
         else:
             driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=options)
 
