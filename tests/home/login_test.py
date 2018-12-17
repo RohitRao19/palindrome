@@ -34,7 +34,7 @@ class LoginTest(unittest.TestCase):
         self.lp.login("test", "")
         result2 = self.lp.verifyBlankCredential()
         self.ts.mark(result2, "Login Failed")
-        self.ts.markFinal("test_invalidBlankLogin", result2, "Login Not Succes"
+        self.ts.markFinal("test_test_InvalidBlankPwd", result2, "Login Not Succes"
                           + "full")
 
     @pytest.mark.run(order=4)
@@ -42,7 +42,7 @@ class LoginTest(unittest.TestCase):
         self.lp.login("", "password")
         result2 = self.lp.verifyBlankCredential()
         self.ts.mark(result2, "Login Failed")
-        self.ts.markFinal("test_invalidBlankLogin", result2, "Login Not Succes"
+        self.ts.markFinal("test_InvalidBlankUsr", result2, "Login Not Succes"
                           + "full")
 
     @pytest.mark.run(order=5)
@@ -50,7 +50,7 @@ class LoginTest(unittest.TestCase):
         self.lp.login("Test", "Password")
         result2 = self.lp.verifyBlankCredential()
         self.ts.mark(result2, "Login Failed")
-        self.ts.markFinal("test_invalidBlankLogin", result2, "Login Not Succes"
+        self.ts.markFinal("test_InvalidCaseSensitive", result2, "Login Not Succes"
                           + "full")
 
     @pytest.mark.run(order=6)
