@@ -23,7 +23,7 @@ class WebDriverFactory():
         options1.add_argument('--headless')
         options1.add_argument('--no-sandbox')
         options1.add_argument('--disable-dev-shm-usage')
-        options2.headless = True
+        options2.headless = False
         if self.browser == "iexplorer":
             # Set ie driver
             driver = webdriver.Ie()
