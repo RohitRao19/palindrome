@@ -1,5 +1,6 @@
 import traceback
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 
 class WebDriverFactory():
@@ -10,22 +11,22 @@ class WebDriverFactory():
     def getWebDriverInstance(self):
         """
        Get WebDriver Instance based on the browser configuration
-
         Returns:
             'WebDriver Instance'
         """
         baseURL = "http://qa-home-palindrome.s3-website.us-east-2.amazonaws.com/login.html"
-
+        options = Options()
+        options.headless = True
         if self.browser == "iexplorer":
             # Set ie driver
             driver = webdriver.Ie()
         elif self.browser == "firefox":
-            driver = webdriver.Firefox(executable_path='C:\pythonProject\drivers\geckodriver.exe')
+            driver = webdriver.Firefox()
         elif self.browser == "chrome":
             # Set chrome driver
-            driver = webdriver.Chrome('C:\\pythonProject\\drivers\\chromedriver')
+            driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=options)            
         else:
-            driver = webdriver.Chrome('C:\\pythonProject\\drivers\\chromedriver')
+            driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=options)
 
         driver.implicitly_wait(3)
         driver.maximize_window()
