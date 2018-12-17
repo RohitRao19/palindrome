@@ -34,7 +34,7 @@ class WebDriverFactory():
             driver = webdriver.Chrome('/usr/bin/chromedriver', options=options1)
             #driver = webdriver.Chrome('C:\\pythonProject\\drivers\\chromedriver', chrome_options=options)
         else:
-            driver = webdriver.Firefox('/usr/local/bin/geckodriver', options=options2)
+            driver = webdriver.Firefox('/usr/bin/geckodriver', options=options2)
 
         driver.implicitly_wait(3)
         driver.maximize_window()
