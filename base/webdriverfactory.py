@@ -31,7 +31,7 @@ class WebDriverFactory():
             driver = webdriver.Firefox()
         elif self.browser == "chrome":
             # Set chrome driver
-            driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=options1)
+            driver = webdriver.Chrome('/usr/bin/chromedriver', options=options1)
             #driver = webdriver.Chrome('C:\\pythonProject\\drivers\\chromedriver', chrome_options=options)
         else:
             driver = webdriver.Firefox('/usr/local/bin/geckodriver', firefox_options=options2)
