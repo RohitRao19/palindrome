@@ -2,4 +2,4 @@
 
 outputfile.txt will give the number of palindromes.
 
-Check auto trigger.
+Check auto trigger.1
