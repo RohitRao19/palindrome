@@ -1,7 +1,10 @@
 import traceback
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+options1 = Options()
 
+from selenium.webdriver.firefox.options import Options
+options2 = Options()
 
 class WebDriverFactory():
 
@@ -15,11 +18,12 @@ class WebDriverFactory():
             'WebDriver Instance'
         """
         baseURL = "http://qa-home-palindrome.s3-website.us-east-2.amazonaws.com/login.html"
-        options = Options()
-        options.headless = True
-        options.add_argument('--headless')
-        options.add_argument('--no-sandbox')
-        options.add_argument('--disable-dev-shm-usage')
+        
+        options1.headless = True
+        options1.add_argument('--headless')
+        options1.add_argument('--no-sandbox')
+        options1.add_argument('--disable-dev-shm-usage')
+        options2.set_headless(True)
         if self.browser == "iexplorer":
             # Set ie driver
             driver = webdriver.Ie()
@@ -27,10 +31,10 @@ class WebDriverFactory():
             driver = webdriver.Firefox()
         elif self.browser == "chrome":
             # Set chrome driver
-            driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=options)
+            driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=options1)
             #driver = webdriver.Chrome('C:\\pythonProject\\drivers\\chromedriver', chrome_options=options)
         else:
-            driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=options)
+            driver = webdriver.Firefox(firefox_options=options2, '/usr/local/bin/geckodriver')
 
         driver.implicitly_wait(3)
         driver.maximize_window()
